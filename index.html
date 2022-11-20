@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400&family=Be+Vietnam+Pro:wght@400;500;700&family=Jost:wght@200;300;500&family=Montserrat:wght@300;400;500;600&family=Open+Sans:wght@400;600;800&family=Poppins:wght@200;400;500;600&family=Quicksand:wght@300;400;500;600;700&family=Rubik:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/overlays.css" />
+    <link rel="stylesheet" href="./styles/config.css" />
+    <link rel="stylesheet" href="./styles/game.css" />
+    <script src="./scripts/config.js" defer></script>
+    <script src="./scripts/game.js" defer></script>
+    <script src="./scripts/app.js" defer></script>
+
+    <title>TIK TAK TOE</title>
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <header>
+      <h1>Play Tik Tak Toe</h1>
+      <p>Build with HTML CSS and JavaScript</p>
+    </header>
+
+    <main>
+      <!-- overlay for the form -->
+      <aside class="modal" id="config-overlay">
+        <h2>Choose your name</h2>
+        <form>
+          <div class="form-control">
+            <label for="playername">palyer name</label>
+            <input type="text " name="playername" id="playername" required />
+          </div>
+          <div>
+            <p id="config-errors"></p>
+            <!-- here default type is set to submit and
+                    we dont want cancel buton to submit the form
+                so type is set to a button -->
+            <button type="reset" class="btn btn-alt" id="cancel-btn">
+              cancle
+            </button>
+            <button type="submit" class="btn" id="submit-btn">confirm</button>
+          </div>
+        </form>
+      </aside>
+      <section id="game-config">
+        <ol>
+          <li>
+            <article>
+              <h2>Player 1</h2>
+              <h3>Player name</h3>
+              <p class="player-symbol">X</p>
+              <button class="btn btn-alt" id="edit-player1">Edit</button>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h2>Player 2</h2>
+              <h3>Player name</h3>
+              <p class="player-symbol">O</p>
+              <button class="btn btn-alt" id="edit-player2">Edit</button>
+            </article>
+          </li>
+        </ol>
+        <button class="btn">Start New Game</button>
+      </section>
+      <section id="active-game">
+        <article id="game-over">
+          <h3>You won <span>PLAYER NAME</span>!</h3>
+          <p>Click start new game to restart</p>
+        </article>
+        <p>its your turn <span id="active-player-name">player name</span></p>
+        <ol id="game-bord">
+          <li class="disabled">O</li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
