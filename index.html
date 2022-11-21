@@ -20,6 +20,7 @@
 
     <title>TIK TAK TOE</title>
   </head>
+
   <body>
     <div id="backdrop"></div>
     <header>
@@ -51,23 +52,28 @@
       <section id="game-config">
         <ol>
           <li>
-            <article>
+            <article id="player-1">
               <h2>Player 1</h2>
               <h3>Player name</h3>
               <p class="player-symbol">X</p>
-              <button class="btn btn-alt" id="edit-player1">Edit</button>
+              <!-- here to differentiate the edit btns data-   methode isused -->
+              <button class="btn btn-alt" id="edit-player1" data-playerid="1">
+                Edit
+              </button>
             </article>
           </li>
           <li>
-            <article>
+            <article id="player-2">
               <h2>Player 2</h2>
               <h3>Player name</h3>
               <p class="player-symbol">O</p>
-              <button class="btn btn-alt" id="edit-player2">Edit</button>
+              <button class="btn btn-alt" id="edit-player2" data-playerid="2">
+                Edit
+              </button>
             </article>
           </li>
         </ol>
-        <button class="btn">Start New Game</button>
+        <button class="btn" id="start-game-btn">Start New Game</button>
       </section>
       <section id="active-game">
         <article id="game-over">
@@ -76,17 +82,17 @@
         </article>
         <p>its your turn <span id="active-player-name">player name</span></p>
         <ol id="game-bord">
-          <li class="disabled">O</li>
-          <li></li>
-          <li></li>
+          <li data-row=" 1" data-col="1"></li>
+          <li data-row=" 1" data-col="2"></li>
+          <li data-row=" 1" data-col="3"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-row=" 2" data-col="1"></li>
+          <li data-row=" 2" data-col="2"></li>
+          <li data-row=" 2" data-col="3"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-row=" 3" data-col="1"></li>
+          <li data-row=" 3" data-col="2"></li>
+          <li data-row=" 3" data-col="3"></li>
         </ol>
       </section>
     </main>

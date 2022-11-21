@@ -1,7 +1,7 @@
 #active-game {
   text-align: center;
   margin: 3rem;
-  /* display: none; */
+  display: none;
 }
 #game-over {
   max-width: 40rem;

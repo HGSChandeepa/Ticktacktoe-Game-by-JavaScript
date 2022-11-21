@@ -1,8 +1,12 @@
 //after edit button click
 
-function openPlayerConfigform() {
+function openPlayerConfigform(e) {
   playerFormOverlay.style.display = "block";
   backdropElem.style.display = "block";
+  // the data selector
+  const selcetedPlayerId = +e.target.dataset.playerid;
+  // here +"1" =1 converted to a integer
+  selcetedPlayer = selcetedPlayerId;
 }
 
 // cancel btn click
@@ -13,6 +17,10 @@ function closePlayerConfigform() {
   Inputform.firstElementChild.classList.remove("error");
   // set the error para to empty
   error.textContent = "";
+
+  // clear the input after a name is entered
+  const playerName = document.getElementById("playername");
+  playerName.value = "";
 }
 
 // for the form form prevent default
@@ -36,4 +44,13 @@ function savePlayerConfig(event) {
     return; //if user entered is invalid then the code below return
     // will not be readed
   }
+
+  // select the article that the player belongs  and target the seconf child
+  const updatedPlayerDataElement = document.getElementById(
+    "player-" + selcetedPlayer
+  );
+  updatedPlayerDataElement.children[1].textContent = enteredPlayerName;
+  players[+selcetedPlayer - 1].name = enteredPlayerName;
+
+  closePlayerConfigform();
 }
